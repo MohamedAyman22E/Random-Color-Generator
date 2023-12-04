@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pro.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="color">
+      <span id="hex">#e74c3c</span>
+      <button>get new number</button>
+    </div>
+    <script>
+      let button = document.querySelector("button");
+      let span = document.querySelector("span");
+      var color, symbol;
+
+      button.addEventListener("click", () => {
+        symbol = "0123456789ABCDEF";
+        color = "#";
+        for (let i = 0; i < 6; i++) {
+          color = color + symbol[Math.floor(Math.random() * 16)];
+          console.log(color);
+        }
+        document.body.style.background = color;
+        span.textContent = color;
+      });
+    </script>
+  </body>
+</html>
